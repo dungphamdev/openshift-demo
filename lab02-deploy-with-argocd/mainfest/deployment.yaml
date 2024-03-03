@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nodejs-hello-world
+  name: nodejs-hello-world
+  namespace: nodejs-hello-world
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs-hello-world
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nodejs-hello-world
+    spec:
+      containers:
+      - image: dungphamdev/nodejs-hello-world
+        name: nodejs-hello-world

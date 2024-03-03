@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: nodejs-hello-world
+  name: nodejs-hello-world
+  namespace: nodejs-hello-world
+spec:
+  port:
+    targetPort: 3000
+  to:
+    kind: Service
+    name: nodejs-hello-world
+    weight: 100

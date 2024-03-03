@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nodejs-hello-world
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: nodejs-hello-world
+    server: https://kubernetes.default.svc 
+  project: default 
+  source: 
+    path: lab02-deploy-with-argocd/mainfest
+    repoURL: https://github.com/dungphamdev/openshift-demo/
+  
