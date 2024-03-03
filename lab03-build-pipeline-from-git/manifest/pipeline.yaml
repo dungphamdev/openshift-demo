@@ -3,10 +3,6 @@ kind: Pipeline
 metadata:
   name: simple-nodesj-hello-world-pipeline
 spec:
-  workspaces:
-    - name: shared-workspace
-      persistentVolumeClaim:
-        claimName: my-shared-pvc
   tasks:
     - name: fetch-source-task
       taskRef:
