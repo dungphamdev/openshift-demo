@@ -8,5 +8,5 @@ spec:
       image: alpine/git
       workingDir: /workspace/source
       script:
-        - git clone $(inputs.params.url) .
-        - git checkout $(inputs.params.revision)
+        - git clone $(ConfigMap.git-config-nodejs-app.url) .
+        - git checkout $(ConfigMap.git-config-nodejs-app.revision)

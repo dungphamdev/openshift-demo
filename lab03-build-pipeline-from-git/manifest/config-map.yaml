@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: git-config-nodejs-app
+data:
+  url: https://github.com/dungphamdev/simple-nodesj-hello-world.git
+  revision: master
