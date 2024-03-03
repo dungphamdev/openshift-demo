@@ -1,0 +1,16 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: simple-nodesj-hello-world-pipeline-run
+spec:
+  pipelineRef:
+    name: simple-nodesj-hello-world-pipeline
+  resources:
+    - name: source-repo
+      resourceRef:
+        name: simple-nodesj-hello-world-git
+  params:
+    - name: url
+      value: https://github.com/dungphamdev/simple-nodesj-hello-world.git
+    - name: revision
+      value: main

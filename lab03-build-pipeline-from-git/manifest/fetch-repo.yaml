@@ -1,0 +1,12 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: fetch-repo
+spec:
+  steps:
+    - name: git-source
+      image: alpine/git
+      workingDir: /workspace/source
+      script:
+        - git clone $(inputs.params.url) .
+        - git checkout $(inputs.params.revision)

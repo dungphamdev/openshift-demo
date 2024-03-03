@@ -9,5 +9,5 @@ spec:
     server: https://kubernetes.default.svc 
   project: default 
   source: 
-    path: lab03-build-pipeline-from-git/mainfest
+    path: lab03-build-pipeline-from-git/manifest
     repoURL: https://github.com/dungphamdev/openshift-demo/
