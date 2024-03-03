@@ -12,8 +12,9 @@ spec:
     #     npm install
     #     npm run build
     - name: build-docker-image
-      image: nodejs-app-image
+      image: node:20
       workingDir: /workspace/source
       script: |
-        docker build -t image-registry.openshift-image-registry.svc:5000/tommy/nodejs-app-image:latest .
+        #docker build -t image-registry.openshift-image-registry.svc:5000/tommy/nodejs-app-image:latest .
+        ls -al
 
