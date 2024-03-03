@@ -5,7 +5,7 @@ metadata:
   labels:
     app: bubble-animation
   name: bubble-animation
-  namespace: bubble-animation
+  namespace: bubble-animation-proj
 spec:
   ports:
   - port: 8080
