@@ -22,3 +22,4 @@ spec:
         git clone $REPO_URL .
         git config --global --add safe.directory /workspace/source
         git checkout $REVISION
+        ls -al
