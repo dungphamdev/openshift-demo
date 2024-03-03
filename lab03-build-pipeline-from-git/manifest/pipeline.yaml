@@ -7,9 +7,9 @@ spec:
     - name: fetch-source-task
       taskRef:
         name: fetch-repo
-    # - name: build-image
-    #   taskRef: 
-    #     name: build-image
-    #   runAfter:
-    #     - fetch-source-task
+    - name: build-image
+      taskRef: 
+        name: build-image
+      runAfter:
+        - fetch-source-task
 
