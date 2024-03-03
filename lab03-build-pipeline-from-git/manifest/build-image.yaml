@@ -8,11 +8,12 @@ spec:
       mountPath: /workspace/source
   steps:
     - name: build-docker-image
-      image: docker:latest
+      image: quay.io/buildah/stable:latest
       workingDir: /workspace/source
       script: |
         ls -al
-        docker build -t image-registry.openshift-image-registry.svc:5000/tommy/nodejs-app-image:latest .
+        buildah --version
+        buildah bud -t image-registry.openshift-image-registry.svc:5000/tommy/nodejs-app-image:latest .
 
 
 
