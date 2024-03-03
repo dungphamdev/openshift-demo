@@ -3,13 +3,21 @@ kind: Pipeline
 metadata:
   name: simple-nodesj-hello-world-pipeline
 spec:
+  workspaces:
+    - name: shared-workspace
   tasks:
     - name: fetch-source-task
       taskRef:
         name: fetch-repo
+      workspaces:
+        - name: source-workspace
+          workspace: shared-workspace
     - name: build-image
       taskRef: 
         name: build-image
       runAfter:
         - fetch-source-task
+      workspaces:
+        - name: source-workspace
+          workspace: shared-workspace
 

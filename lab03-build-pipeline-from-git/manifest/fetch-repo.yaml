@@ -3,6 +3,9 @@ kind: Task
 metadata:
   name: fetch-repo
 spec:
+  workspaces:
+    - name: source-workspace
+      mountPath: /workspace/source
   steps:
     - name: git-source
       image: alpine/git

@@ -3,6 +3,9 @@ kind: Task
 metadata:
   name: build-image
 spec:
+  workspaces:
+    - name: source-workspace
+      mountPath: /workspace/source
   steps:
     # - name: build
     #   image: node:20
