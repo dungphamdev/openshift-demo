@@ -5,6 +5,14 @@ metadata:
 spec:
   workspaces:
     - name: shared-workspace
+      volumeClaimTemplate:
+        metadata:
+          name: shared-pvc
+        spec:
+          accessModes: [ReadWriteOnce]
+          resources:
+            requests:
+              storage: 1Gi
   tasks:
     - name: fetch-source-task
       taskRef:
