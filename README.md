@@ -18,3 +18,8 @@ Command # 2 ---------
 - Get Argo password 
 - argoPass=$(oc get secret/openshift-gitops-cluster -n openshift-gitops -o jsonpath='{.data.admin\.password}' | base64 -d)
 - echo $argoPass 
+
+
+Installation:
+1. Red Hat OpenShift GitOps: to use Argo CD
+2. Red Hat OpenShift Pipelines: to use Tekton
