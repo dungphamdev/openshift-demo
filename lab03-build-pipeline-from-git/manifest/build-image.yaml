@@ -1,0 +1,19 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: build-image
+spec:
+  steps:
+    # - name: build
+    #   image: node:20
+    #   workingDir: /workspace/source
+    #   script: |
+    #     # Add commands to build your Node.js application here
+    #     npm install
+    #     npm run build
+    - name: build-docker-image
+      image: nodejs-app-image
+      workingDir: /workspace/source
+      script: |
+        docker build -t image-registry.openshift-image-registry.svc:5000/tommy/nodejs-app-image:latest .
+
