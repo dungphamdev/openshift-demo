@@ -10,3 +10,6 @@ spec:
     - name: build-image
       taskRef: 
         name: build-image
+      runAfter:
+        - fetch-source-task
+
