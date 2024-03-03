@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: introduce
+spec:
+  params: 
+    - name: username
+      type: string
+  steps: 
+    - name: introduce
+      image: ubuntu
+      script: |
+        #!/bin/sh
+        echo "I am $(params.username)"  

@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: goodbye-world
+spec: 
+  steps:
+    - name: echo-goodbye-world
+      image: ubuntu
+      script: |
+        #!/bin/bash
+        echo "Goodbye world"

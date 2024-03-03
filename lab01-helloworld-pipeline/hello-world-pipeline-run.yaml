@@ -1,0 +1,12 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata: 
+  name: hello-world-pipeline-run
+spec: 
+  pipelineRef: 
+    name: hello-world-pipeline
+  params: 
+    - name: username
+      value: "Tommy"
+
+    
