@@ -12,13 +12,15 @@ spec:
       taskRef:
         name: fetch-repo
       workspaces:
-        - name: shared-workspace
-        
+        - name: source-workspace
+          workspace: shared-workspace
+
     - name: build-image
       taskRef: 
         name: build-image
       runAfter:
         - fetch-source-task
       workspaces:
-        - name: shared-workspace
+        - name: source-workspace
+          workspace: shared-workspace
 
