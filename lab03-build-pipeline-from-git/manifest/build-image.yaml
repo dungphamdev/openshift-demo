@@ -8,7 +8,7 @@ spec:
       mountPath: /workspace/source
   steps:
     - name: build-docker-image
-      image: node:20
+      image: docker:latest
       workingDir: /workspace/source
       script: |
         ls -al
