@@ -3,11 +3,6 @@ kind: Pipeline
 metadata:
   name: simple-nodesj-hello-world-pipeline
 spec:
-
-  resources:
-    - name: nodejs-pvc
-      type: pvc
- 
   workspaces:
     - name: shared-workspace
   tasks:
