@@ -5,7 +5,7 @@ metadata:
   namespace: openshift-gitops #managed by argoCD extension
 spec:
   destination:
-    namespace: bubble-animation-proj #projectname
+    namespace: bubble-animation #projectname
     server: https://kubernetes.default.svc 
   project: default 
   source: 
