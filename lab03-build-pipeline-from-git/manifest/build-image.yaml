@@ -8,12 +8,10 @@ spec:
       mountPath: /workspace/source
   steps:
     - name: build-docker-image
-      image: quay.io/buildah/stable:latest
+      image: gcr.io/kaniko-project/executor:v1.7.0
       workingDir: /workspace/source
+      env:
+        - name: DOCKER_CONFIG
+          value: /workspace/source/.docker
       script: |
-        ls -al
-        buildah --version
-        USER=root buildah bud -t image-registry.openshift-image-registry.svc:5000/tommy/nodejs-app-image:latest .
-
-
-
+         /kaniko/executor --context=/workspace/source --dockerfile=/workspace/source/Dockerfile --destination=image-registry.openshift-image-registry.svc:5000/tommy/nodejs-app-image:latest
