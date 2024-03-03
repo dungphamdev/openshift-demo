@@ -5,14 +5,8 @@ metadata:
 spec:
   workspaces:
     - name: shared-workspace
-      volumeClaimTemplate:
-        metadata:
-          name: shared-pvc
-        spec:
-          accessModes: [ReadWriteOnce]
-          resources:
-            requests:
-              storage: 1Gi
+    #TODO: define workspace volume type so the pipeline can run with no params
+     
   tasks:
     - name: fetch-source-task
       taskRef:

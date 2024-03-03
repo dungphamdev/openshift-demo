@@ -7,17 +7,12 @@ spec:
     - name: source-workspace
       mountPath: /workspace/source
   steps:
-    # - name: build
-    #   image: node:20
-    #   workingDir: /workspace/source
-    #   script: |
-    #     # Add commands to build your Node.js application here
-    #     npm install
-    #     npm run build
     - name: build-docker-image
       image: node:20
       workingDir: /workspace/source
       script: |
-        #docker build -t image-registry.openshift-image-registry.svc:5000/tommy/nodejs-app-image:latest .
         ls -al
+        docker build -t image-registry.openshift-image-registry.svc:5000/tommy/nodejs-app-image:latest .
+
+
 
