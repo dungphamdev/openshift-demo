@@ -1,18 +1,18 @@
-# apiVersion: tekton.dev/v1beta1
-# kind: Pipeline
-# metadata:
-#   name: simple-nodesj-hello-world-pipeline
-# spec:
-#   resources:
-#     - name: source-repo
-#       type: git
-#   tasks:
-#     - name: fetch-source-task
-#       taskRef:
-#         name: fetch-repo
-#       resources:
-#         inputs:
-#           - name: url
-#             resource: source-repo
-#           - name: revision
-#             resource: source-repo
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: simple-nodesj-hello-world-pipeline
+spec:
+  resources:
+    - name: source-repo
+      type: git
+  tasks:
+    - name: fetch-source-task
+      taskRef:
+        name: fetch-repo
+      resources:
+        inputs:
+          - name: url
+            resource: source-repo
+          - name: revision
+            resource: source-repo
