@@ -14,12 +14,14 @@ spec:
       workspaces:
         - name: source-workspace
           workspace: shared-workspace
-    - name: build-image
-      taskRef: 
-        name: build-image
+
+    - name: build-image-task
+      taskRef:
+        name: buildah-task
       runAfter:
         - fetch-source-task
       workspaces:
         - name: source-workspace
           workspace: shared-workspace
+    
 

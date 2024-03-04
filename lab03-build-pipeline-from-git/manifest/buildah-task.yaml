@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: buildah-task
+spec:
+  workspaces:
+    - name: source-workspace
+      mountPath: /workspace/source
+  steps:
+    - name: build-image
+      image: quay.io/buildah/stable:latest
+      workingDir: /workspace/source
+      script: |
+        buildah bud -t test:latest .
