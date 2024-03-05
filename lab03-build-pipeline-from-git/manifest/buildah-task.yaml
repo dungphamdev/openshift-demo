@@ -14,10 +14,6 @@ spec:
         capabilities:
           add:
             - "SETFCAP"
-            - "SYS_ADMIN"
-            - "MKNOD"
-            - "SYS_CHROOT"
-            - "SETFCAP"
 
       script: |
         ls
