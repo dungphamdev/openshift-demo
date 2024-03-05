@@ -16,8 +16,5 @@ spec:
             - "SETFCAP"
 
       script: |
-        ls
-        whoami
-        id
-        getent group
+        modprobe fuse
         buildah bud -t test:latest .
