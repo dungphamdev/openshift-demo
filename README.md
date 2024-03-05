@@ -23,3 +23,11 @@ Command # 2 ---------
 Installation:
 1. Red Hat OpenShift GitOps: to use Argo CD
 2. Red Hat OpenShift Pipelines: to use Tekton
+
+
+
+
+----
+error writing "0 0 4294967295\n" to /proc/31/uid_map: write /proc/31/uid_map: operation not permitted
+
+Solution: https://access.redhat.com/solutions/6993746
