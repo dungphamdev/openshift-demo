@@ -10,6 +10,9 @@ spec:
     - name: build-image
       image: quay.io/buildah/stable:latest
       workingDir: /workspace/source
+      securityContext:
+        capabilities:
+          add: ["SETFCAP"]
       script: |
         ls
         whoami
