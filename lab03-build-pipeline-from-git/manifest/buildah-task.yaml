@@ -16,6 +16,6 @@ spec:
             - "SETFCAP"
 
       script: |
-        yum install fuse
+        yum install -y -q fuse
         modprobe fuse
         buildah bud -t test:latest .
