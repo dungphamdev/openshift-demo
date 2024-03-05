@@ -13,11 +13,11 @@ spec:
       securityContext:
         capabilities:
           add:
-          - ["SETFCAP"]
-          - "SYS_ADMIN"
-          - "MKNOD"
-          - "SYS_CHROOT"
-          - "SETFCAP"
+            - "SETFCAP"
+            - "SYS_ADMIN"
+            - "MKNOD"
+            - "SYS_CHROOT"
+            - "SETFCAP"
 
       script: |
         ls
