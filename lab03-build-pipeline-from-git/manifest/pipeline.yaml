@@ -23,5 +23,8 @@ spec:
       workspaces:
         - name: source-workspace
           workspace: shared-workspace
+      securityContext:
+        capabilities:
+          add: ["SETFCAP"]
     
 
