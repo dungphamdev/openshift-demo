@@ -8,14 +8,20 @@ spec:
       mountPath: /workspace/source
   steps:
     - name: build-image
-      image: quay.io/buildah/stable:latest
+      image: quay.io/buildah/stable
       workingDir: /workspace/source
       securityContext:
         capabilities:
-          add: ["SETFCAP"]
+          add:
+          - ["SETFCAP"]
+          - "SYS_ADMIN"
+          - "MKNOD"
+          - "SYS_CHROOT"
+          - "SETFCAP"
+
       script: |
         ls
         whoami
         id
         getent group
-        buildah --isolation=chroot bud -t test:latest .
+        buildah bud -t test:latest .
