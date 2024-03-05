@@ -11,6 +11,8 @@ spec:
       image: quay.io/buildah/stable:latest
       workingDir: /workspace/source
       script: |
+        ls
         whoami
         id
+        getent group
         buildah bud -t test:latest .
